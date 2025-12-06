@@ -1,0 +1,99 @@
+:root {
+  --days: 7;
+}
+
+/* CONTAINER GERAL */
+.agenda-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* ===== CABEÇALHO ===== */
+.agenda-header {
+  display: grid;
+  grid-template-columns: 80px repeat(var(--days), 1fr);
+  background: #f1f3f4;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.agenda-day {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.agenda-day-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.agenda-day-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.agenda-corner {
+  width: 80px;
+}
+
+/* ===== GRID ===== */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(var(--days), 1fr);
+}
+
+.agenda-row {
+  display: contents;
+}
+
+/* HORÁRIO LATERAL */
+.agenda-time {
+  background: #fafafa;
+  padding: 10px;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  text-align: right;
+  font-size: 13px;
+  color: #666;
+}
+
+/* CELULA DA AGENDA */
+.agenda-slot {
+  height: 45px;
+  border-bottom: 1px solid #ececec;
+  border-right: 1px solid #ececec;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Livre */
+.agenda-slot.livre:hover {
+  background: #e6f7e8; /* Verde claro suave no hover */
+  border: 1px solid #4CAF50; /* Borda verde no hover */
+}
+
+.agenda-slot.livre {
+  cursor: pointer;
+  background: #ffffff; /* Fundo branco para não distrair */
+}
+
+/* Ocupado */
+.agenda-slot.ocupado {
+  background: #fde8e8; /* Vermelho claro suave */
+  color: #c0392b; /* Vermelho forte */
+  cursor: not-allowed;
+  font-weight: 600;
+  /* Adicionar um ícone de "Ocupado" para reforçar */
+  border: 1px dashed #f1a9a0;
+}
