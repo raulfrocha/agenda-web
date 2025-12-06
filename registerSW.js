@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/agenda-web/sw.js', { scope: '/agenda-web/' })})}
